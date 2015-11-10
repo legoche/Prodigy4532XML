@@ -1,0 +1,12 @@
+<map proto="1.4.0">
+<name>Nightmare Mini</name>
+<version>1.0.0</version>
+<objective>Destroy the enemy monuments.</objective>
+<!-- autores. -->
+<authors>
+    <author uuid="ef4ea031-998f-4ec9-b7b6-1bdd428bcef8" contribution="Map Builder"/> <!-- Prodigy4532 -->
+</authors>
+<teams>
+   <team id="red-team" color="dark red" max="8" max-overfill="10">Red Team</team>
+   <team id="blue-team" color="blue" max="8" max-overfill="10">Blue Team</team>
+</teams>
