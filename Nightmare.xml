@@ -10,3 +10,5 @@
    <team id="red-team" color="dark red" max="8" max-overfill="10">Red Team</team>
    <team id="blue-team" color="blue" max="8" max-overfill="10">Blue Team</team>
 </teams>
+
+</map>
