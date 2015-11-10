@@ -12,12 +12,12 @@
 <contributors>
     <contributor contribution="Moral help">TiranuxTitan</contributor>
     <contributor contribution="Moral help">Bblitz_x</contributor>
-	<contributor contribution="Feedback">Matilaina</contributor>
-	<contributor contribution="Feedback and XML">Prodigy4532</contributor>
+    <contributor contribution="Feedback">Matilaina</contributor>
+    <contributor contribution="Feedback and XML">Prodigy4532</contributor>
 </contributors>
 <teams>
-    <team color="dark red" max="15">Red</team>
-    <team color="blue" max="15">Blue</team>
+    <team color="dark red" max="15" max-overfill="17">Red</team>
+    <team color="blue" max="15" max-overfill="17">Blue</team>
 </teams>
 <spawns>
     <spawn team="red" kit="red">
@@ -53,7 +53,7 @@
     </wool>
 </wools>
 <kits>
-    <kit id="spawn" force="true">
+    <kit name="spawn">
         <item slot="0" enchantment="durability:2">stone sword</item>
         <item slot="1">bow</item>
         <item slot="2" enchantment="durability:2;dig speed:1">iron pickaxe</item>
@@ -64,15 +64,15 @@
         <item slot="6" amount="1">golden apple</item>
         <item slot="8" amount="64">cooked fish</item>
         <boots enchantment="durability:2">chainmail boots</boots>
-		<chestplate enchantment="durability:2">iron chestplate</chestplate>
+	<chestplate enchantment="durability:2">iron chestplate</chestplate>
         <potion duration="5" amplifier="1">heal</potion>
         <potion duration="5">damage resistance</potion>
     </kit>
-    <kit id="red" parents="spawn">
+    <kit name="red" parents="spawn">
         <helmet color="cd0000">leather helmet</helmet>
         <leggings color="cd0000">leather leggings</leggings>
     </kit>
-    <kit id="blue" parents="spawn">
+    <kit name="blue" parents="spawn">
         <helmet color="0066cc">leather helmet</helmet>
         <leggings color="0066cc">leather leggings</leggings>
     </kit>
@@ -86,14 +86,34 @@
         <team>red</team>
     </filter>
     <filter name="only-red-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>blue</team>
+            </all>
+        </not>
     </filter>
     <filter name="only-blue-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>red</team>
+            </all>
+        </not>
     </filter>
 </filters>
 <regions>
     <union name="blue-wool-rooms">
-        <rectangle name="blue-room" min="-87,-56" max="-99,-44"/>
-        <rectangle name="green-room" min="-100,61" max="-88,49"/>
+        <rectangle name="red-room" min="-8,-45" max="4,-57"/>
+        <rectangle name="yellow-room" min="4,61" max="-8,49"/>
     </union>
     <apply block="only-blue" use="only-blue-usage">
         <region name="blue-wool-rooms"/>
@@ -101,9 +121,9 @@
     <apply enter="only-blue" message="You may not enter your own wool room!">
         <region name="blue-wool-rooms"/>
     </apply>
-    <union name="red-wool-rooms">
-        <rectangle name="red-room" min="-8,-45" max="4,-57"/>
-        <rectangle name="yellow-room" min="4,61" max="-8,49"/>
+    <union name="red-wool-rooms">    
+        <rectangle name="blue-room" min="-87,-56" max="-99,-44"/>
+        <rectangle name="green-room" min="-100,61" max="-88,49"/>
     </union>
     <apply block="only-red" use="only-red-usage">
         <region name="red-wool-rooms"/>
@@ -114,8 +134,8 @@
 
     <!-- supply room protection -->
     <apply block="deny-all" message="You may not break or place blocks in the supplies room!">
-        <cuboid name="blue-storage-room" min="-119,2,-13" max="-110,7,17"/>
-        <cuboid name="red-storage-room" min="23,2,17" max="14,7,-12"/>
+        <cuboid name="blue-storage-room" min="-119,2,-13" max="-110,17,17"/>
+        <cuboid name="red-storage-room" min="23,2,17" max="14,17,-12"/>
     </apply>
 
     <!-- spawn protection -->
@@ -137,13 +157,13 @@
 </toolrepair>
 <itemremove>
     <item>stone sword</item>
-	<item>bow</item>
-	<item>glass</item>
-	<item>cooked fish</item>
-	<item>stone_pickaxe</item>
-	<item>log</item>
-	<item>string</item>
-	<item>nether quartz</item>
+    <item>bow</item>
+    <item>glass</item>
+    <item>cooked fish</item>
+    <item>stone_pickaxe</item>
+    <item>log</item>
+    <item>string</item>
+<item>nether quartz</item>
 </itemremove>
 <!--  Tutorial  -->
 <tutorial>
