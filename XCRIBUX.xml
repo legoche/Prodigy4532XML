@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>NoName</name>
+<version>1.0.0</version>
+<objective>Capture the wool from the enemies wool rooms and return them to your victory monument.</objective>
+<authors>
+    <author uuid="995ebdbb-529a-4a50-bcb4-7a2620e533fa"/> <!-- Jenni -->
+    <author uuid="c62feb82-5f5a-433d-ac6d-c0429f247789"/> <!-- _XCRIBUX_ -->
+</authors>
+<contributors>
+    <contributor contribution="Feedback and XML">Prodigy4532</contributor>
+</contributors>
+<teams>
+   <team id="red-team" color="dark red" max="24" max-overfill="28">Red</team>
+   <team id="blue-team" color="blue" max="24" max-overfill="28">Blue</team>
+</teams>
+<kits>
+    <kit name="spawn" force="true">
+        <item slot="0" material ="stone sword"/>
+        <item slot="1" material ="stone pickaxe"/>
+        <item slot="2" material ="bow"/>
+        <item slot="28" amount="64" material="arrow"/>
+        <item slot="28" amount="32" material="log"/>
+        <item slot="8" amount="32" material="bread"/>
+        <potion duration="5" amplifier="1">heal</potion>
+    </kit>
+    <kit name="red" parents="spawn">
+        <helmet color="cd0000">leather helmet</helmet>
+        <chestplate color="cd0000">leather chestplate</chestplate>
+        <boots color="cd0000">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>
+        <chestplate color="0066cc">leather chestplate</chestplate>
+        <boots color="0066cc">leather boots</boots>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="90">
+            <cuboid min="19,31,193" max="21,31,194"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="-90">
+            <cuboid min="21,31,-76" max="19,31,-77"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="-16,67,57" max="-17,67,59"/>
+        </regions>
+    </default>
+</spawns>
+<wools team="red">
+    <wool color="lime">
+        <monument><block>21,29,196</block></monument>
+    </wool>
+    <wool color="yellow">
+        <monument><block>19,29,196</block></monument>
+    </wool>
+</wools>
+<wools team="blue">
+    <wool color="pink">
+        <monument><block>19,29,-80</block></monument>
+    </wool>
+    <wool color="purple">
+        <monument><block>21,29,-81</block></monument>
+    </wool>
+</wools>
+<!--  Regions  -->
+<filters>
+    <filter name="only-blue">
+        <team>blue</team>
+    </filter>
+    <filter name="only-red">
+        <team>red</team>
+    </filter>
+    <filter name="only-red-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>blue</team>
+            </all>
+        </not>
+    </filter>
+    <filter name="only-blue-usage">
+        <not>
+            <all>
+                <any>
+                    <block>chest</block>
+                    <block>workbench</block>
+                    <block>trap door</block>
+                </any>
+                <team>red</team>
+            </all>
+        </not>
+    </filter>
+</filters>
+<regions>
+    <union name="blue-wool-rooms">
+        <rectangle name="lime-room" min="-20,-34" max="41,-65"/>
+        <rectangle name="yellow-room" min="60,-64" max="81,-36"/>
+    </union>
+    <apply block="only-blue" use="only-blue-usage">
+        <region name="blue-wool-rooms"/>
+    </apply>
+    <apply enter="only-blue" message="You may not enter your own wool room!">
+        <region name="blue-wool-rooms"/>
+    </apply>
+    <union name="red-wool-rooms">    
+        <rectangle name="purple-room" min="60,151" max="81,181"/>
+        <rectangle name="pink-room" min="-20,181" max="-41,152"/>
+    </union>
+    <apply block="only-red" use="only-red-usage">
+        <region name="red-wool-rooms"/>
+    </apply>
+    <apply enter="only-red" message="You may not enter your own wool room!">
+        <region name="red-wool-rooms"/>
+    </apply>
+
+    <!-- supply room protection -->
+    <apply block="deny-all" message="You may not break or place blocks in the supplies room!">
+        <cuboid name="blue-storage-room" min="40,27,-66" max="-1,40,-87"/>
+        <cuboid name="red-storage-room" min="0,27,183" max="41,40,203"/>
+    </apply>
+
+    <!-- spawn protection -->
+    <apply enter="only-red" message="You may not enter the enemy team's spawn!">
+        <cuboid name="red-spawn-room" min="0,27,183" max="41,40,203"/>
+    </apply>
+    <apply enter="only-blue" message="You may not enter the enemy team's spawn!">
+        <cuboid name="blue-spawn-room" min="40,27,-66" max="-1,40,-87"/>    
+    </apply>
+</regions>
+<!--  More  -->
+<maxbuildheight>50</maxbuildheight>
+<toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+    <tool>stone_pickaxe</tool>
+</toolrepair>
+<itemremove>
+    <item>log</item>
+    <item>bread</item>
+    <item>string</item>
+</itemremove>
+<timelock>on</timelock>
+</map>

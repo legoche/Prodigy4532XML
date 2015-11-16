@@ -146,8 +146,8 @@
         <cuboid name="blue-spawn-room" min="-119,2,-13" max="-110,7,17"/>    
     </apply>
     
-    <!-- observers spaawn -->
-    <apply block="deny-all" message="You may not enter to the obsrver spawn!">
+    <!-- observers spawn -->
+    <apply block="deny-all" message="You may not enter to the observer spawn!">
         <cuboid name="observer-spawn" min="-42,42,35" max="-54,29,-23"/>
     </apply> 
 </regions>
