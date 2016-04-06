@@ -7,8 +7,8 @@
     <!--  Prodigy4532  -->
 </authors>
 <teams>
-<team id="red-player" color="dark red" max="5" max-overfill="5">Red Player</team>
-<team id="blue-player" color="blue" max="5" max-overfill="5">Blue Player</team>
+<team id="red-player" color="dark red" min="1" max="3">Red Player</team>
+<team id="blue-player" color="blue" min="1" max="3">Blue Player</team>
 </teams>
   <kits>
     <kit name="all" potion-particles="false">
@@ -16,41 +16,41 @@
     </kit>
     <kit name="team" parents="all">
       <item slot="0" enchantment="durability:3;damage all:1">diamond sword</item>
-	  <item slot="1" amount="1" damage="16421">potion</item>
-	  <item slot="2" amount="1" damage="16421">potion</item>
-	  <item slot="3" amount="1" damage="16421">potion</item>
-	  <item slot="4" amount="1" damage="16421">potion</item>
-	  <item slot="5" amount="1" damage="16421">potion</item>
-	  <item slot="6" amount="1" damage="16421">potion</item>
-	  <item slot="9" amount="1" damage="16421">potion</item>
-	  <item slot="10" amount="1" damage="16421">potion</item>
-	  <item slot="11" amount="1" damage="16421">potion</item>
-	  <item slot="12" amount="1" damage="16421">potion</item>
-	  <item slot="13" amount="1" damage="16421">potion</item>
-	  <item slot="14" amount="1" damage="16421">potion</item>
-	  <item slot="15" amount="1" damage="16421">potion</item>
-	  <item slot="18" amount="1" damage="16421">potion</item>
-	  <item slot="19" amount="1" damage="16421">potion</item>
-	  <item slot="20" amount="1" damage="16421">potion</item>
-	  <item slot="21" amount="1" damage="16421">potion</item>
-	  <item slot="22" amount="1" damage="16421">potion</item>
-	  <item slot="23" amount="1" damage="16421">potion</item>
-	  <item slot="24" amount="1" damage="16421">potion</item>
-	  <item slot="27" amount="1" damage="16421">potion</item>
-	  <item slot="28" amount="1" damage="16421">potion</item>
-	  <item slot="29" amount="1" damage="16421">potion</item>
-	  <item slot="30" amount="1" damage="16421">potion</item>
-	  <item slot="31" amount="1" damage="16421">potion</item>
-	  <item slot="32" amount="1" damage="16421">potion</item>
-	  <item slot="33" amount="1" damage="16421">potion</item>
-	  <item slot="34" amount="1" damage="8226">potion</item>
-	  <item slot="35" amount="1" damage="8226">potion</item>
-	  <item slot="7" amount="1" damage="8226">potion</item>
-	  <item slot="16" amount="1" damage="16388">potion</item>
-	  <item slot="25" amount="1" damage="16388">potion</item>
-	  <item slot="17" amount="1" damage="16458">potion</item>
-	  <item slot="26" amount="1" damage="16458">potion</item>
-    <item slot="8" amount="32">bread</item>
+	   <item slot="1" amount="16">ender pearl</item>
+	   <item slot="2" amount="1" damage="16421">potion</item>
+	   <item slot="3" amount="1" damage="16421">potion</item>
+	   <item slot="4" amount="1" damage="16421">potion</item>
+	   <item slot="5" amount="1" damage="16421">potion</item>
+	   <item slot="6" amount="1" damage="16421">potion</item>
+	   <item slot="9" amount="1" damage="16421">potion</item>
+	   <item slot="10" amount="1" damage="16421">potion</item>
+	   <item slot="11" amount="1" damage="16421">potion</item>
+	   <item slot="12" amount="1" damage="16421">potion</item>
+	   <item slot="13" amount="1" damage="16421">potion</item>
+	   <item slot="14" amount="1" damage="16421">potion</item>
+	   <item slot="15" amount="1" damage="16421">potion</item>
+	   <item slot="18" amount="1" damage="16421">potion</item>
+	   <item slot="19" amount="1" damage="16421">potion</item>
+	   <item slot="20" amount="1" damage="16421">potion</item>
+	   <item slot="21" amount="1" damage="16421">potion</item>
+	   <item slot="22" amount="1" damage="16421">potion</item>
+	   <item slot="23" amount="1" damage="16421">potion</item>
+	   <item slot="24" amount="1" damage="16421">potion</item>
+	   <item slot="27" amount="1" damage="16421">potion</item>
+	   <item slot="28" amount="1" damage="16421">potion</item>
+	   <item slot="29" amount="1" damage="16421">potion</item>
+	   <item slot="30" amount="1" damage="16421">potion</item>
+	   <item slot="31" amount="1" damage="16421">potion</item>
+	   <item slot="32" amount="1" damage="16421">potion</item>
+	   <item slot="33" amount="1" damage="16421">potion</item>
+	   <item slot="34" amount="1" damage="8226">potion</item>
+	   <item slot="35" amount="1" damage="8226">potion</item>
+	   <item slot="7" amount="1" damage="8226">potion</item>
+	   <item slot="16" amount="1" damage="16388">potion</item>
+	   <item slot="25" amount="1" damage="16388">potion</item>
+	   <item slot="17" amount="1" damage="16458">potion</item>
+	   <item slot="26" amount="1" damage="16458">potion</item>
+     <item slot="8" amount="32">golden carrot</item>
     </kit>
     <kit name="red-gear" parents="team">
       <helmet locked="true" enchantment="durability:3;protection environmental:1">diamond helmet</helmet>
@@ -95,7 +95,12 @@
     <mode after="10s" material="air"/>
 </modes>
 <broadcasts>
-<alert after="1s">`aYou can download this map here: github.com/Prodigy4532/AkariMaps | Thanks for use my maps :)</alert>
+<alert after="1s">`aYou can help me with xmls here | `cgithub.com/xFracTV/xFracTVXML `a| Thanks :)</alert>
 </broadcasts>
-<blitz/>
+<blitz>
+    <lives>1</lives>
+    <broadcastLives>true</broadcastLives>
+    <map game="Sh1-Prot1"/>
+</blitz>
+<include src="blitz-global.xml"/>
 </map>

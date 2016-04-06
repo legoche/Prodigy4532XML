@@ -1,5 +1,5 @@
 <map proto="1.3.3">
-<name>Sh2Prot1-PotPvP</name>
+<name>Sh2Prot2-PotPvP</name>
 <version>2.2</version>
 <objective>Mapa "PotPVP", GL hf</objective>
 <authors>
@@ -53,16 +53,16 @@
      <item slot="8" amount="32">golden carrot</item>
     </kit>
     <kit name="red-gear" parents="team">
-      <helmet locked="true" enchantment="durability:3;protection environmental:1">diamond helmet</helmet>
-      <chestplate locked="true" enchantment="durability:3;protection environmental:1">diamond chestplate</chestplate>
-      <leggings locked="true" enchantment="durability:3;protection environmental:1">diamond leggings</leggings>
-      <boots locked="true" enchantment="durability:3;protection environmental:1">diamond boots</boots>
+      <helmet locked="true" enchantment="durability:3;protection environmental:2">diamond helmet</helmet>
+      <chestplate locked="true" enchantment="durability:3;protection environmental:2">diamond chestplate</chestplate>
+      <leggings locked="true" enchantment="durability:3;protection environmental:2">diamond leggings</leggings>
+      <boots locked="true" enchantment="durability:3;protection environmental:2">diamond boots</boots>
     </kit>
     <kit name="blue-gear" parents="team">
-      <helmet locked="true" enchantment="durability:3;protection environmental:1">diamond helmet</helmet>
-      <chestplate locked="true" enchantment="durability:3;protection environmental:1">diamond chestplate</chestplate>
-      <leggings locked="true" enchantment="durability:3;protection environmental:1">diamond leggings</leggings>
-      <boots locked="true" enchantment="durability:3;protection environmental:1">diamond boots</boots>
+      <helmet locked="true" enchantment="durability:3;protection environmental:2">diamond helmet</helmet>
+      <chestplate locked="true" enchantment="durability:3;protection environmental:2">diamond chestplate</chestplate>
+      <leggings locked="true" enchantment="durability:3;protection environmental:2">diamond leggings</leggings>
+      <boots locked="true" enchantment="durability:3;protection environmental:2">diamond boots</boots>
     </kit>
   </kits>
 <spawns pitch="0">
@@ -100,7 +100,7 @@
 <blitz>
     <lives>1</lives>
     <broadcastLives>true</broadcastLives>
-    <map game="Sh2-Prot1"/>
+    <map game="Sh2-Prot2"/>
 </blitz>
 <include src="blitz-global.xml"/>
 </map>
