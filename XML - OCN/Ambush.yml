@@ -1,0 +1,126 @@
+info:
+  title: Ambush
+  world: Ambush
+  version: 1
+  type: tdm
+  creators:
+  - LEGODTHEBUILDER
+  - Xuph
+  - ImRaging
+  spawn: 1.5,200,9.5,0,0
+  time-lock: true
+ 
+duration: 10m
+max: 100
+ 
+regions:
+  builddisable:
+    type: global
+    flags:
+      build:
+        who: '*'
+        message: '&cYou are not allowed to build in this map.'
+  bluescore:
+    type: cuboid
+    min: -11,159,-51
+    max: -11,161,-53
+    flags:
+      enter:
+        who: 'blue'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: 16.5,154,70.5,0,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  redscore:
+    type: cuboid
+    min: 13,159,69
+    max: 13,161,71
+    flags:
+      enter:
+        who: 'red'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: -14.5,154,-52.5,180,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  blueno:
+    type: cuboid
+    min: 12,159,71
+    max: 12,161,69
+    flags:
+      enter:
+        who: 'blue'
+        message: '&cYou may not enter your own scorebox.'
+ redno:
+    type: cuboid
+    min: -10,159,-53
+    max: -10,161,-51
+    flags:
+      enter:
+        who: 'red'
+        message: '&cYou may not enter your own scorebox.'
+       
+ 
+repair-drops:
+- iron sword
+- bow
+ 
+remove-drops:
+- iron sword
+- iron helmet
+- leather chestplate
+- leather leggings
+- iron boots
+- bow
+- golden carrot
+- arrow
+ 
+loadout:
+  effects:
+    - damage resistance:3,5
+    - night vision
+  helmet:
+    item: iron helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: leather leggings
+  boots:
+    item: iron boots
+  0:
+    item: iron_sword
+  1:
+    item: bow
+  2:
+    item: golden apple
+    amount: 1
+  5:
+    item: golden carrot
+    amount: 16
+  8:
+    item: arrow
+    amount: 16
+ 
+ 
+teams:
+  blue:
+    spawn:
+    - 16,176,70.5,90,0
+    title: Blue Team
+    max: 8
+  red:
+    spawn:
+    - -14,176,-52.5,-90,0
+    title: Red Team
+    max: 8
