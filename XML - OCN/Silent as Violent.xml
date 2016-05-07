@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Silent as Violent</name>
+<version>1.0.0</version>
+<objective>King of the hill.</objective>
+<authors>
+    <author uuid="d9b4ffbc-11d0-453a-a93f-82dc59fca4b6"/> <!-- Wulfcaspice -->
+</authors>
+<contributors>
+    <contributor uuid="f866f386-3d9d-493c-8de8-87b493cab8be" contribution="Host and Feedback"/> <!-- alexanderjoe -->
+</contributors>
+<teams>
+   <team id="red" color="dark red" min="1" max="10">Red</team>
+   <team id="blue" color="blue" min="1" max="10">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="-44">
+            <cuboid min="-54,4,-18" max="-54,4,-18"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="46">
+            <cuboid min="53,4,-18" max="53,4,-18"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="180">
+            <cuboid min="-0.5,10,13.5" max="-0.5,10,13.5"/>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">stone sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="2" damage="-3000">diamond pickaxe</item>
+        <item slot="3" amount="1">golden apple</item>
+        <item slot="8" amount="32">bread</item>
+        <item slot="28" amount="64">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+    </kit>
+    <kit name="blue" parents="spawn">  
+        <chestplate color="334CB2" damage="-3000">leather chestplate</chestplate>
+        <leggings color="334CB2" damage="-3000">leather leggings</leggings>
+        <helmet color="334CB2" damage="-3000">leather helmet</helmet>
+        <boots color="334CB2" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="red" parents="spawn">
+        <chestplate color="993333" damage="-3000">leather chestplate</chestplate>
+        <leggings color="993333" damage="-3000">leather leggings</leggings>
+        <helmet color="993333" damage="-3000">leather helmet</helmet>
+        <boots color="993333" damage="-3000">leather boots</boots>
+    </kit>
+</kits>
+<toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<itemremove>
+    <item>diamond pickaxe</item>
+    <item>leather leggings</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather boots</item>
+    <item>arrow</item>
+    <item>bread</item>
+</itemremove>
+<control-points capture-time="5s" incremental="true" neutral-state="true" show-progress="true">
+    <control-point name="Center" points="1">
+        <capture-region>
+            <cuboid min="-4,5,-10" max="3,8,-3"/>
+        </capture-region>
+        <progress-display-region>
+            <cuboid min="-4,5,-10" max="3,8,-3"/>
+        </progress-display-region>
+        <owner-display-region>
+            <cuboid min="-4,5,-10" max="3,8,-3"/>
+        </owner-display-region>
+    </control-point>
+    <control-point name="Courtyard" points="1">
+        <capture-region>
+            <cuboid min="-3,6,-43" max="2,9,-37"/>
+        </capture-region>
+        <progress-display-region>
+            <cuboid min="-3,6,-43" max="2,9,-37"/>
+        </progress-display-region>
+        <owner-display-region>
+            <cuboid min="-3,6,-43" max="2,9,-37"/>
+        </owner-display-region>
+    </control-point>
+</control-points>
+<regions>
+    <cylinder name="center" base="-1,1,-7" radius="5" height="20"/>
+    <cylinder name="courtyard" base="-1,1,-41" radius="4" height="20"/>
+    <apply block="deny-all" region="center" message="You may not edit the hills!"/>
+    <apply block="deny-all" region="courtyard" message="You may not edit the hills!"/>
+</regions>
+<score>
+    <limit>500</limit>
+    <king/>
+</score>
+</map>
