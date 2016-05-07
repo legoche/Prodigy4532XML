@@ -3,13 +3,14 @@
 <name>Quintus Remix</name>
 <version>1.0.0</version>
 <objective>Capture the wool.</objective>
+<time result="objectives">45m</time>
 <authors>
     <author uuid="3893a242-cc17-447e-9b1c-774fc8941af8"/> <!-- G_SKIPPY -->
     <author uuid="7fc8e143-d139-4f63-a18d-cd3d676fb303"/> <!-- Hacktivism -->
 </authors>
 <teams>
-   <team id="green" color="green" min="1" max="10">Red</team>
-   <team id="yellow" color="yellow" min="1" max="10">Blue</team>
+   <team id="green" color="green" min="1" max="10">Green</team>
+   <team id="yellow" color="yellow" min="1" max="10">Yellow</team>
 </teams>
 <spawns>
     <spawn team="green" kit="green">
@@ -54,36 +55,35 @@
     </kit>
 </kits>
 <wools team="green">
-    <wool color="purple" location="4.5,33,-904.5">
-        <monument>
-        	<block>41,34,-769</block>
-        </monument>
-    </wool>
-    <wool color="orange" location="76.5,33,-904.5">
-        <monument>
-        	<block>39,34,-769</block>
-        </monument>
-    </wool>
-</wools>
-<wools team="yellow">
     <wool color="blue" location="4.5,33,-774.5">
         <monument>
-        	<block>41,34,-911</block>
+            <block>41,34,-911</block>
         </monument>
     </wool>
     <wool color="red" location="76.5,33,-774.5">
         <monument>
-        	<block>39,34,-911</block>
+            <block>39,34,-911</block>
+        </monument>
+    </wool>
+</wools>
+<wools team="yellow">
+    
+    <wool color="purple" location="4.5,33,-904.5">
+        <monument>
+            <block>41,34,-769</block>
+        </monument>
+    </wool>
+    <wool color="orange" location="76.5,33,-904.5">
+        <monument>
+            <block>39,34,-769</block>
         </monument>
     </wool>
 </wools>
 <regions>
     <cylinder name="yellowbase" base="40,32,-776" radius="11" height="16"/>
     <cylinder name="greenbase" base="40,32,-902" radius="11" height="16"/>
-    <apply enter="only-yellow" region="yelowbase" message="You may not enter the enemy team's spawn!"/>
-    <apply enter="only-green" region="greenbase" message="You may not enter the enemy team's spawn!"/>
-    <apply block="deny-all" region="yellowbase" message="You may not enter your own wool room!"/>
-    <apply block="deny-all" region="greenbase" message="You may not enter your own wool room!"/>
+    <apply block="deny-all" enter="only-yellow" region="yellowbase"/>
+    <apply block="deny-all" enter="only-green" region="greenbase"/>
     <!-- wools -->
     <cuboid name="purpleroom" min="-4,39,-911" max="12,27,-897"/>
     <cuboid name="orangeroom" min="68,27,-911" max="84,39,-897"/>
@@ -91,11 +91,11 @@
     <cuboid name="blueroom" min="-4,27,-783" max="12,39,-769"/>
     <cuboid name="redroom" min="68,27,-783" max="84,39,-769"/>
 
-    <apply block="deny-all" enter="only-yellow" region="purpleroom" message="You may not enter your own wool room!"/>
-    <apply block="deny-all" enter="only-yellow" region="orangeroom" message="You may not enter your own wool room!"/>
+    <apply block="deny-all" enter="only-yellow" region="purpleroom" message="You may not edit the wool rooms!"/>
+    <apply block="deny-all" enter="only-yellow" region="orangeroom" message="You may not edit the wool rooms!"/>
 
-    <apply block="deny-all" enter="only-green" region="blueroom" message="You may not enter your own wool room!"/>
-    <apply block="deny-all" enter="only-green" region="redroom" message="You may not enter your own wool room!"/>
+    <apply block="deny-all" enter="only-green" region="blueroom" message="You may not edit the wool rooms!"/>
+    <apply block="deny-all" enter="only-green" region="redroom" message="You may not edit the wool rooms!"/>
 </regions>
 <filters>
     <filter name="only-yellow">
