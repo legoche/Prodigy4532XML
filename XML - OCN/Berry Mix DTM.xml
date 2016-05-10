@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Berry Mix</name>
+<version>3.1.0</version>
+<objective>Destroy the enemy monument to win.</objective>
+<authors>
+    <author uuid="50849f8f-dd10-4947-b0cf-5d91fa3634a2"/> <!-- Crimson_Aught -->
+</authors>
+<gamemode>dtm</gamemode>
+<time result="objectives">1h</time>
+<teams>
+   <team id="blue" color="blue" min="1" max="10">Blueberries</team>
+   <team id="red" color="dark red" min="1" max="10">Raspberries</team>
+</teams>
+<spawns>
+    <spawn team="blue" kit="blue">
+        <regions yaw="-90">
+            <cuboid min="-66.5,237,0.5" max="-66.5,237,0.5"/>
+        </regions>
+    </spawn>
+    <spawn team="red" kit="red">
+        <regions yaw="90">
+            <cuboid min="65.5,237,0.5" max="65.5,237,0.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="0">
+            <cuboid min="0.5,253,-73.5" max="0.5,253,-73.5"/>
+        </regions>
+    </default>
+</spawns>
+<destroyables name="Left" materials="obsidian" completion="100%">
+    <destroyable owner="blue">
+       <region><block>-66,237,21</block></region>
+    </destroyable>
+    <destroyable owner="red">
+       <region><block>66,237,-21</block></region>
+    </destroyable>
+</destroyables>
+<destroyables name="Right" materials="obsidian" completion="100%">
+    <destroyable owner="blue">
+       <region><block>-66,237,-21</block></region>
+    </destroyable>
+    <destroyable owner="red">
+       <region><block>66,237,21</block></region>
+    </destroyable>
+</destroyables>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">iron sword</item>
+        <item slot="1" damage="-3000" enchantment="arrow infinite:1">bow</item>
+        <item slot="2" damage="-3000" enchantment="dig speed:1">diamond pickaxe</item>
+        <item slot="3" amount="64">bread</item>
+        <item slot="4" amount="3">golden apple</item>
+        <item slot="5" amount="64" damage="2">wood</item>
+        <item slot="8">gold axe</item>
+        <item slot="27" amount="16">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+    </kit>
+    <kit name="red" parents="spawn">  
+        <chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
+        <leggings color="cd0000" damage="-3000">leather leggings</leggings>
+        <boots color="cd0000" damage="-3000">leather boots</boots>
+        <item slot="5" amount="64">stained glass:14</item>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <chestplate color="0066cc" damage="-3000">leather chestplate</chestplate>
+        <leggings color="0066cc" damage="-3000">leather leggings</leggings>
+        <boots color="0066cc" damage="-3000">leather boots</boots>
+        <item slot="5" amount="64">stained glass:11</item>
+    </kit>
+    <kit name="kill">
+        <item slot="4" amount="1">golden apple</item>
+    </kit>
+</kits>
+<regions>
+    <cylinder name="bluebase" base="65.5,230,0.5" radius="6" height="20"/>
+    <cylinder name="redbase" base="66.5,230,0.5" radius="6" height="20"/>
+    <apply block="deny-all" enter="only-blue" region="bluebase"/>
+    <apply block="deny-all" enter="only-red" region="redbase"/>
+</regions>
+<filters>
+    <filter name="only-red">
+        <team>red</team>
+    </filter>
+    <filter name="only-blue">
+        <team>blue</team>
+    </filter>
+</filters>
+<itemremove>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+    <item>iron sword</item>
+    <item>stained glass:14</item>
+    <item>stained glass:11</item>
+    <item>diamond pickaxe</item>
+    <item>bow</item>
+    <item>obsidian</item>
+</itemremove>
+<kill-rewards>
+    <kill-reward>
+        <kit id="kill"/>
+    </kill-reward>
+</kill-rewards>
+</map>
