@@ -1,0 +1,120 @@
+info:
+  title: Solar
+  world: Solar
+  version: 1
+  type: tdm
+  creators:
+  - LEGODTHEBUILDER
+  - ryaannn
+  spawn: 5825,209,28.5,90,0
+  time-lock: true
+duration: 7m30s
+max: 100
+teams:
+  blue:
+    spawn:
+    - 25.5,229,-0.5,0,0
+    title: Blue Team
+    max: 6
+  red:
+    spawn:
+    - 25.5,229,57.5,180,0
+    title: Red Team
+    max: 6
+
+regions:
+  builddisable:
+    type: global
+    flags:
+      build:
+        who: '*'
+        message: '&aYou are not allowed to build in this map.'
+  bluescore:
+    type: cuboid
+    min: 23,179,-8
+    max: 27,185,-11
+    flags:
+      enter:
+        who: 'blue'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: 25.5,183,57.5,180,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  redscore:
+    type: cuboid
+    min: 28,179,65
+    max: 23,185,68
+    flags:
+      enter:
+        who: 'red'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: 25.5,183,-0.5,0,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  blueno:
+    type: cuboid
+    min: 28,179,65
+    max: 23,185,68
+    flags:
+      enter:
+        who: 'blue'
+        message: '&aYou may not enter your own scorebox.'
+ redno:
+    type: cuboid
+    min: 23,179,-8
+    max: 27,185,-11
+    flags:
+      enter:
+        who: 'red'
+        message: '&aYou may not enter your own scorebox.'
+       
+ 
+repair-drops:
+- iron sword
+- bow
+ 
+remove-drops:
+- iron sword
+- leather helmet
+- leather chestplate
+- iron leggings
+- leather boots
+- cooked beef
+- arrow
+ 
+loadout:
+  effects:
+    - damage resistance:3,5
+  helmet:
+    item: leather helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: iron leggings
+  boots:
+    item: leather boots
+  0:
+    item: iron_sword
+  1:
+    item: bow
+  4:
+    item: golden apple
+    amount: 1
+  8:
+    item: cooked beef
+    amount: 16
+  28:
+    item: arrow
+    amount: 16
