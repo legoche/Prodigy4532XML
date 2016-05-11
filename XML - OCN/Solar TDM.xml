@@ -80,7 +80,7 @@
     <portal x="@25.5" y="@183" z="@-0.5" yaw="@0">
 		<cuboid min="28,179,65" max="23,185,68"/>   
     </portal>
-    <portal x="@25.5" y="@183" z="@57.5" yaw="@90">
+    <portal x="@25.5" y="@183" z="@57.5" yaw="@180">
 		<cuboid min="23,179,-8" max="27,185,-11"/>     
     </portal>
 </portals>
