@@ -86,7 +86,6 @@ repair-drops:
 - bow
  
 remove-drops:
-- iron sword
 - leather helmet
 - leather chestplate
 - iron leggings

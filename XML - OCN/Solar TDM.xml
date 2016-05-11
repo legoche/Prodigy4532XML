@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Solar</name>
+<version>1.0.0</version>
+<objective>Team deathmatch.</objective>
+<authors>
+    <author uuid="c29bef37-d8e2-42a9-b746-04f2df78f374"/> <!-- LEGODTHEBUILDER -->
+    <author uuid="cad8013a-b98a-4067-9f09-81b0734e0085"/> <!-- ryaannn -->
+</authors>
+<timelock>on</timelock>
+<teams>
+   <team id="red" color="dark red" min="1" max="8">Red Team</team>
+   <team id="blue" color="blue" min="1" max="8">Blue Team</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="180">
+            <cuboid min="25.5,229,57.5" max="25.5,229,57.5"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="0">
+            <cuboid min="25.5,229,-0.5" max="25.5,229,-0.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="90">
+            <cuboid min="58.5,209,28.5" max="58.5,209,28.5"/>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">iron sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="4" amount="1">golden apple</item>
+        <item slot="8" amount="16">cooked beef</item>
+        <item slot="28" amount="16">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <potion duration="oo">night vision</potion>
+        <leggings damage="-3000">iron leggings</leggings>
+    </kit>
+    <kit name="red" parents="spawn">  
+    	<helmet color="cd0000" damage="-3000">leather helmet</helmet>
+        <chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
+        <boots color="cd0000" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc" damage="-3000">leather helmet</helmet>
+        <chestplate color="0066cc" damage="-3000">leather chestplate</chestplate>
+        <boots color="0066cc" damage="-3000">leather boots</boots>
+    </kit>
+</kits>
+<itemremove>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>iron leggings</item>
+    <item>leather boots</item>
+    <item>bow</item>
+    <item>cooked beef</item>
+    <item>arrow</item>
+</itemremove>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<score>
+    <limit>100</limit>
+    <time>600</time>
+    <kills>1</kills>
+    <deaths>1</deaths>
+    <box value="2" filter="no-blue" cooldown="10">
+		<cuboid name="redscore" min="28,179,65" max="23,185,68"/>  
+    </box>
+    <box value="2" filter="no-red" cooldown="10">
+		<cuboid name="bluescore" min="23,179,-8" max="27,185,-11"/>             		
+    </box>
+</score>
+<portals>
+    <portal x="@25.5" y="@183" z="@-0.5" yaw="@0">
+		<cuboid min="28,179,65" max="23,185,68"/>   
+    </portal>
+    <portal x="@25.5" y="@183" z="@57.5" yaw="@90">
+		<cuboid min="23,179,-8" max="27,185,-11"/>     
+    </portal>
+</portals>
+<filters>
+    <filter name="no-red" parents="deny-all">
+        <allow><team>blue</team></allow>
+    </filter>
+    <filter name="no-blue" parents="deny-all">
+        <allow><team>red</team></allow>
+    </filter>
+</filters>
+<regions>
+    <apply block="deny-all" message="`aYou are not allowed to build in this map.">
+         <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+    <apply enter="no-blue" message="`aYou may not enter your own scorebox.">
+		<cuboid min="28,179,65" max="23,185,68"/>    
+    </apply>
+    <apply enter="no-red" message="`aYou may not enter your own scorebox.">
+        <cuboid min="23,179,-8" max="27,185,-11"/>  	  
+    </apply>
+</regions>
+</map>
