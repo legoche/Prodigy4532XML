@@ -1,0 +1,113 @@
+info:
+  title: Strike
+  world: Strike
+  version: 1
+  type: tdm
+  creators:
+  - SPOOKZTHEBUILDER 
+  spawn: -105.5,142,7.5,-90,0
+  time-lock: true
+duration: 12m
+max: 100
+teams:
+  orange:
+    spawn:
+    - -50.5,115,-2.5,90,0
+    title: Blue
+    max: 10
+  purple:
+    spawn:
+    - -163.5,115,19.5,-90,0
+    title: Red
+    max: 10
+regions:
+  builddisable:
+    type: global
+    flags:
+      build:
+        who: '*'
+        message: '&aYou are not allowed to build in this map.'
+  purplecore:
+    type: cuboid
+    min: -57,124,7
+    max: -62,120,14
+    flags:
+      enter:
+        who: 'blue'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: -163.5,115,19.5,-90,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  orangescore:
+    type: cuboid
+    min: -157,124,9
+    max: -151,120,2
+    flags:
+      enter:
+        who: 'red'
+        allow: true
+        triggers:
+          score:
+            amount: 2
+          teleport:
+            to: -50.5,115,-2.5,90,0
+          sound:
+            sound: PORTAL_TRAVEL
+            volume: 0.7
+            pitch: 2.0
+  orangeno:
+    type: cuboid
+    min: -57,124,7
+    max: -62,120,14
+    flags:
+      enter:
+        who: 'blue'
+        message: '&aYou may not enter your own scorebox.'
+ purpleno:
+    type: cuboid
+    min: -157,124,9
+    max: -151,120,2
+    flags:
+      enter:
+        who: 'red'
+        message: '&aYou may not enter your own scorebox.'
+repair-drops:
+- stone sword
+- bow
+remove-drops:
+- leather helmet
+- chainmail chestplate
+- leather leggings
+- leather boots
+- cooked beef
+- arrow
+loadout:
+  effects:
+    - damage resistance:3,5
+  helmet:
+    item: leather helmet
+  chestplate:
+    item: chainmail chestplate
+  leggings:
+    item: leather leggings
+  boots:
+    item: leather boots
+  0:
+    item: stone sword
+  1:
+    item: bow
+  3:
+    item: cooked beef
+    amount: 16
+  4:
+    item: golden apple
+    amount: 1
+  28:
+    item: arrow
+    amount: 16
