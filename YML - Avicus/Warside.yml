@@ -1,0 +1,76 @@
+info:
+  title: Warside
+  world: Warside
+  version: 1
+  type: tdm
+  creators:
+  - Prodigy4532
+  spawn: -138.5,48,24.5,-90,0
+  time-lock: true
+duration: 7m30s
+max: 100
+teams:
+  blue:
+    spawn:
+    - -104.5,53,-9.5,45,0
+    title: Blue
+    max: 10
+  red:
+    spawn:
+    - -172.5,53,58.5,-135,0
+    title: Red
+    max: 10
+regions:
+  builddisable:
+    type: global
+    flags:
+      build:
+        who: '*'
+        message: '&aYou are not allowed to build in this map.'
+example-4-region:
+    type: global
+    flags:
+      kill_player:
+        who: '*'
+        allow: true
+        triggers:
+          give_loadout:
+            loadout:
+              8:
+                item: golden apple
+                amount: 2
+remove-drops:
+- leather helmet
+- leather chestplate
+- chainmail leggings
+- leather boots
+- bread
+- arrow
+- bow
+- stone sword
+- stained glass pane:14
+- stained glass pane:11
+loadout:
+  effects:
+    - damage resistance:3,5
+  helmet:
+    item: leather helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: chainmail leggings
+  boots:
+    item: leather boots
+  0:
+    item: stone sword
+  1:
+    item: bow
+  6:
+    item: bread
+    amount: 32
+  8:
+    item: golden apple
+    amount: 1
+  28:
+    item: arrow
+    amount: 24

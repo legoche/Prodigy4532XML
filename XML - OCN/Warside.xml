@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<map proto="1.4.0">
+<name>Warside</name>
+<version>1.0.0</version>
+<objective>Be the team with the most points after 10 minutes.</objective>
+<authors>
+    <author uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7"/> <!-- Prodigy4532 -->
+</authors>
+<timelock>on</timelock>
+<teams>
+   <team id="red" color="dark red" min="1" max="10">Red</team>
+   <team id="blue" color="blue" min="1" max="10">Blue</team>
+</teams>
+<spawns>
+    <spawn team="red" kit="red">
+        <regions yaw="-135">
+            <cuboid min="-172.5,53,58.5" max="-172.5,53,58.5"/>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blue">
+        <regions yaw="45">
+            <cuboid min="-104.5,53,-9.5" max="-104.5,53,-9.5"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-90">
+            <cuboid min="-138.5,48,24.5" max="-138.5,48,24.5"/>
+        </regions>
+    </default>
+</spawns>
+<score>
+    <limit>100</limit>
+    <time>600</time>
+    <kills>1</kills>
+</score>
+<regions>
+    <apply block="deny-all">
+         <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+</regions>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">iron sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="6" amount="32">bread</item>
+        <item slot="8" amount="1">golden apple</item>
+        <item slot="28" amount="24">arrow</item>
+        <potion duration="5" amplifier="100">damage resistance</potion>
+        <leggings>chainmail leggings</leggings>
+    </kit>
+    <kit name="red" parents="spawn">
+        <helmet color="cd0000">leather helmet</helmet>  
+        <chestplate color="cd0000">leather chestplate</chestplate>
+        <boots color="cd0000">leather boots</boots>
+    </kit>
+    <kit name="blue" parents="spawn">
+        <helmet color="0066cc">leather helmet</helmet>  
+        <chestplate color="0066cc">leather chestplate</chestplate>
+        <boots color="0066cc">leather boots</boots>
+    </kit>
+</kits>
+<itemremove>
+    <item>stone sword</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>leather boots</item>
+    <item>bow</item>
+    <item>bread</item>
+    <item>arrow</item>
+    <item>stained glass pane:14</item>
+    <item>stained glass pane:11</item>
+</itemremove>
+<kill-rewards>
+    <kill-reward>
+        <item amount="1" material="golden apple"/>
+    </kill-reward>
+</kill-rewards>
+</map>
