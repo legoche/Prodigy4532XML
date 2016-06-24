@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<map proto="1.4.1">
+<name>Fossil 5CP</name>
+<version>1.0.0</version>
+<objective>Capture all the points to win!</objective>
+<authors>
+
+</authors>
+<timelock>on</timelock>
+<teams>
+   <team id="orange" color="gold" min="1" max="8">Orange</team>
+   <team id="purple" color="dark purple" min="1" max="8">Purple</team>
+</teams>
+<spawns>
+    <spawn team="orange" kit="orange">
+        <regions yaw="0">
+            <block>10.5,148.5,67.5</block>
+        </regions>
+    </spawn>
+    <spawn team="purple" kit="purple">
+        <regions yaw="180">
+            <block>10.5,148.5,-52.5</block>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="180">
+            <block>-14,133,-35</block>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit name="spawn">
+        <item slot="0" damage="-3000">stone sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="8" amount="32">golden carrot</item>
+        <item slot="28" amount="32">arrow</item>
+        <potion duration="7" amplifier="100">damage resistance</potion>
+        <chestplate damage="-3000">chainmail chestplate</chestplate>
+        <leggings damage="-3000">chainmail leggings</leggings>
+        <potion duration="6" amplifier="5">blindness</potion>
+    </kit>
+    <kit name="orange" parents="spawn">  
+        <helmet color="D87F33" damage="-3000">leather helmet</helmet>
+        <chestplate color="D87F33" damage="-3000">leather chestplate</chestplate>
+        <boots color="D87F33" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="purple" parents="spawn">
+        <helmet color="7F3FB2" damage="-3000">leather helmet</helmet>
+        <chestplate color="7F3FB2" damage="-3000">leather chestplate</chestplate>
+        <boots color="7F3FB2" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="reward">
+        <item amount="1">golden apple</item>
+        <item amount="8">arrow</item>
+    </kit>
+</kits>
+<regions>
+    <apply block="deny-all">
+        <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+</regions>
+<control-points incremental="true" neutral-state="true" show-progress="true" scaled-time="true" time-multiplier="0.25">
+    <control-point initial-owner="orange" id="orange-last" name="Orange Last" capture-time="5s">
+        <capture-region> <cuboid min="14,135,44" max="7,139,51"/> </capture-region>
+        <progress-display-region> <cuboid min="31,110,-43" max="37,94,-37"/> </progress-display-region>
+        <player-filter><any>
+            <objective>orange-2nd</objective>
+            <team>orange</team>
+        </any></player-filter>
+    </control-point>
+    <control-point initial-owner="orange" id="orange-2nd" name="Orange 2nd" capture-time="5s">
+        <capture-region> <cuboid min="26,147,25" max="33,151,18"/> </capture-region>
+        <progress-display-region> <cuboid min="26,147,25" max="33,151,18"/> </progress-display-region>
+        <player-filter><any>
+            <objective>orange-last</objective>
+            <objective>mid</objective>
+        </any></player-filter>
+    </control-point>
+    <control-point id="mid" name="Mid" capture-time="5s">
+        <capture-region> <cuboid min="7,136,4" max="14,140,11"/> </capture-region>
+        <progress-display-region> <cuboid min="7,136,4" max="14,140,11"/>/> </progress-display-region>
+        <player-filter><any>
+            <objective>orange-2nd</objective>
+            <objective>purple-2nd</objective>
+        </any></player-filter>
+    </control-point>
+    <control-point initial-owner="purple" id="purple-2nd" name="Purple 2nd" capture-time="5s">
+        <capture-region> <cuboid min="-5,147,-10" max="-12,151,-3"/> </capture-region>
+        <progress-display-region> <cuboid min="-5,147,-10" max="-12,151,-3"/> </progress-display-region>
+        <player-filter><any>
+            <objective>mid</objective>
+            <objective>purple-last</objective>
+        </any></player-filter>
+    </control-point>
+    <control-point initial-owner="purple" id="purple-last" name="Purple Last" capture-time="5s">
+        <capture-region> <cuboid min="14,135,-36" max="7,139,-29"/> </capture-region>
+        <progress-display-region> <cuboid min="14,135,-36" max="7,139,-29"/> </progress-display-region>
+        <player-filter><any>
+            <objective>purple-2nd</objective>
+            <team>purple</team>
+        </any></player-filter>
+    </control-point>
+</control-points>
+<king/>
+<portals>
+    <!-- Orange. -->
+    <portal x="@32.5" y="@135" z="@53.5" yaw="0">
+        <region><cuboid min="12,124,66" max="9,122,69"/></region>
+    </portal>
+    <portal x="@-17.5" y="@135" z="@60.5" yaw="90" filter="orange-2">
+        <region><cuboid min="12,125,66" max="9,122,69"/></region>
+    </portal>
+    <portal x="@-14.5" y="@140" z="@3.5" yaw="0" filter="mid-held">
+        <region><cuboid min="12,126,66" max="9,122,69"/></region>
+    </portal>
+    <portal x="@9.5" y="@132" z="@-9.5" yaw="0" filter="purple-2nd">
+        <region><cuboid min="12,127,66" max="9,122,69"/></region>
+    </portal>
+    <!-- Purple. -->
+    <portal x="@-11.5" y="@135" z="@-38.5" yaw="0">
+        <region><cuboid min="12,124,-54" max="9,122,-51"/></region>
+    </portal>
+    <portal x="@38.5" y="@135" z="@-45.5" yaw="90" filter="purple-2">
+        <region><cuboid min="12,125,-54" max="9,122,-51"/></region>
+    </portal>
+    <portal x="@35.5" y="@140" z="@11.5" yaw="0" filter="mid-held">
+        <region><cuboid min="12,126,-54" max="9,122,-51"/></region>
+    </portal>
+    <portal x="@11.5" y="@132" z="@24.5" yaw="0" filter="orange-2nd">
+        <region><cuboid min="12,127,-54" max="9,122,-51"/></region>
+    </portal>
+</portals>
+<filters>
+    <filter name="only-purple">
+        <team>purple</team>
+    </filter>
+    <filter name="only-orange">
+        <team>orange</team>
+    </filter>
+    <filter name="purple-2nd" parents="deny-all">
+        <allow><objective>purple-2nd</objective></allow>
+    </filter>
+    <filter name="orange-2nd" parents="deny-all">
+        <allow><objective>orange-2nd</objective></allow>
+    </filter>
+    <filter name="purple-2" parents="deny-all">
+        <allow><objective>purple-2nd</objective></allow>
+    </filter>
+    <filter name="orange-2" parents="deny-all">
+        <allow><objective>orange-2nd</objective></allow>
+    </filter>
+    <filter name="mid-held" parents="deny-all">
+        <allow><objective>mid</objective></allow>
+    </filter>
+    <filter name="purple-last" parents="deny-all">
+        <allow><objective>purple-last</objective></allow>
+    </filter>
+    <filter name="orange-last" parents="deny-all">
+        <allow><objective>orange-last</objective></allow>
+    </filter>
+</filters>
+<time result="objectives">12m</time>
+<itemremove>
+    <item>stone sword</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>leather boots</item>
+    <item>bow</item>
+    <item>golden carrot</item>
+    <item>arrow</item>
+</itemremove>
+<kill-rewards>
+    <kill-reward>
+        <kit id="reward"/>
+    </kill-reward>
+</kill-rewards>
+</map>
