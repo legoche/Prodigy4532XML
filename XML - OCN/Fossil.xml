@@ -4,7 +4,7 @@
 <version>1.0.0</version>
 <objective>Capture all the points to win!</objective>
 <authors>
-
+    <author uuid="0ce67602-7448-415f-813e-2fee1487a8b5"/> <!-- 4lextr -->
 </authors>
 <timelock>on</timelock>
 <teams>
@@ -23,8 +23,8 @@
         </regions>
     </spawn>
     <default>
-        <regions yaw="180">
-            <block>-14,133,-35</block>
+        <regions yaw="-90" kit="obs">
+            <cuboid min="8,174,5" max="13,173,10"/>
         </regions>
     </default>
 </spawns>
@@ -53,6 +53,9 @@
         <item amount="1">golden apple</item>
         <item amount="8">arrow</item>
     </kit>
+    <kit name="obs">
+        <potion duration="oo">night vision</potion>
+    </kit>
 </kits>
 <regions>
     <apply block="deny-all">
@@ -61,8 +64,8 @@
 </regions>
 <control-points incremental="true" neutral-state="true" show-progress="true" scaled-time="true" time-multiplier="0.25">
     <control-point initial-owner="orange" id="orange-last" name="Orange Last" capture-time="5s">
-        <capture-region> <cuboid min="14,135,44" max="7,139,51"/> </capture-region>
-        <progress-display-region> <cuboid min="31,110,-43" max="37,94,-37"/> </progress-display-region>
+        <capture-region> <cuboid min="14,134,44" max="7,139,51"/> </capture-region>
+        <progress-display-region> <cuboid min="14,134,44" max="7,139,51"/> </progress-display-region>
         <player-filter><any>
             <objective>orange-2nd</objective>
             <team>orange</team>
