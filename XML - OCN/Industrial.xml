@@ -1,0 +1,114 @@
+<map proto="1.4.0">
+<name>Industrial</name>
+<version>1.0</version>
+<objective>Capture the enemy flag 3 times to win.</objective>
+<authors>
+    <author uuid="cad8013a-b98a-4067-9f09-81b0734e0085"/> <!-- imryaan -->
+</authors>
+<contributors>
+    <contributor uuid="1c898c77-b0cc-474a-8ce4-b5521f2b18e7" contribution="XML and World Edit"/> <!-- Prodigy4532 -->
+</contributors>
+<teams>
+    <team id="purple" color="dark purple" min="1" max="8">Purple</team>
+    <team id="red" color="dark red" min="1" max="8">Orange</team>
+</teams>
+<spawns>
+    <spawn team="purple" kit="purple">
+        <regions yaw="180"><block>-41.5,92.5,12.5</block></regions>
+    </spawn>
+    <spawn team="red" kit="red">
+        <regions yaw="90"><block>42,92.5,-11.5</block></regions>
+    </spawn>
+    <default kit="obsKit">
+        <regions yaw="-90">
+            <cylinder base="-64.5,102,-40.5" radius="2" height="2"/>
+        </regions>
+    </default>
+</spawns>
+<kits>
+    <kit id="spawnKit">
+        <item slot="0" damage="-3000">iron sword</item>
+        <item slot="1" damage="-3000">bow</item>
+        <item slot="2" amount="1">golden apple</item>
+        <item slot="3" amount="16">arrow</item>
+        <item slot="8" amount="64">golden carrot</item>
+        <leggings damage="-3000">chainmail leggings</leggings>
+        <boots damage="-3000">iron boots</boots>
+        <potion duration="6" amplifier="100">damage resistance</potion>
+    </kit>
+    <kit id="red" parents="spawnKit">
+        <helmet color="cd0000" damage="-3000">leather helmet</helmet>
+        <chestplate color="cd0000" damage="-3000">leather chestplate</chestplate>
+    </kit>
+    <kit id="purple" parents="spawnKit">
+        <helmet color="7F3FB2" damage="-3000">leather helmet</helmet>
+        <chestplate color="7F3FB2" damage="-3000">leather chestplate</chestplate>
+    </kit>
+
+    <kit id="red-flag-kit">
+        <potion duration="oo" amplifier="-2" ambient="true">health boost</potion>
+        <potion duration="oo">slowness</potion>
+    </kit>
+    <kit id="purple-flag-kit">
+        <potion duration="oo" amplifier="-2" ambient="true">health boost</potion>
+        <potion duration="oo">slowness</potion>
+    </kit>
+    <kit id="obsKit">
+        <potion duration="oo">night vision</potion>
+    </kit>
+    <kit id="reset-kit" force="true">
+        <potion duration="1" amplifier="0">health boost</potion>
+        <potion duration="0" amplifier="10">slowness</potion>
+    </kit>
+</kits>
+<filters>
+    <team id="red-only">red</team>
+    <team id="purple-only">purple</team>
+    <time id="flag-respawns">0</time>
+    <filter name="no-red" parents="deny-all">
+        <allow><team>purple</team></allow>
+    </filter>
+    <filter name="no-purple" parents="deny-all">
+        <allow><team>red</team></allow>
+    </filter>
+</filters>
+<regions>
+    <cylinder id="purple-net" base="42.5,52,0.5" radius="2" height="2" />
+    <cylinder id="red-net" base="-41.5,52,0.5" radius="2" height="2" />
+    <apply block="deny-all">
+        <rectangle min="oo,oo" max="-oo,-oo"/>
+    </apply>
+</regions>
+<flags flag-proximity-metric="closest player">
+    <flag id="red-flag" name="Red Flag" owner="red" pickup-kit="red-flag-kit" drop-kit="reset-kit">
+        <post pickup-filter="purple-only" recover-time="15s" respawn-time="5s">42.5,52,0.5</post>
+    </flag>
+    <flag id="purple-flag" name="Purple Flag" owner="purple" pickup-kit="purple-flag-kit" drop-kit="reset-kit">>
+        <post pickup-filter="red-only" recover-time="15s" respawn-time="5s">-41.5,52,0.5</post>
+    </flag>
+    <flags points="1">
+        <net region="red-net" flag="purple-flag" respawn-filter="flag-respawns"/>
+        <net region="purple-net" flag="red-flag" respawn-filter="flag-respawns"/>
+    </flags>
+</flags>
+<time>12m</time>
+<score>
+    <limit>3</limit>
+    <kills>0</kills>
+    <deaths>0</deaths>
+</score>
+<itemremove>
+    <item>golden carrot</item>
+    <item>iron sword</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>chainmail leggings</item>
+    <item>iron boots</item>
+    <item>arrow</item>
+</itemremove>
+<toolrepair>
+    <tool>iron sword</tool>
+    <tool>bow</tool>
+</toolrepair>
+<timelock>on</timelock>
+</map>
