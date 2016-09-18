@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map name="Pasterine" version="1.0.0">
+    <include src="defaults.xml"/>
+    <authors>
+        <author uuid="99b8a2a4-cb22-4ba1-a683-7cd90a02aac5"/> <!-- Junr -->
+        <author uuid="4b50f555-29e0-4fd7-aef8-d20a157df16e"/> <!-- OldManTigerMask -->
+    </authors>
+    <teams>
+        <team id="blue" color="blue" min="10" max="15">{colors.blue}</team>
+        <team id="lime" color="yellow" min="10" max="15">{colors.lime}</team>
+    </teams>
+    <spawns>
+        <spawn> <!-- Obs -->
+            <regions>
+                <point yaw="-146">17.5, 6, -34.5</point>
+            </regions>
+        </spawn>
+        <spawn team="lime" loadout="kit"> <!-- Lime -->
+            <regions>
+                <point yaw="-90">-53.5, 5, -5.5</point>
+            </regions>
+        </spawn>
+        <spawn team="blue" loadout="kit"> <!-- Blue -->
+            <regions>
+                <point yaw="90">12.5, 5, -5.5</point>
+            </regions>
+        </spawn>
+    </spawns>
+    <loadouts>
+        <loadout id="kit">
+            <helmet team-color="true" material="leather helmet"/>
+            <chestplate material="chainmail chestplate"/>
+            <leggings team-color="true" material="leather leggings"/>
+            <boots team-color="true" material="leather boots"/>
+            <item slot="0" material="wood sword"/>
+            <item slot="1" material="bow"/>
+            <item slot="8" material="bread" amount="12"/>
+            <item slot="28" material="arrow" amount="2"/>
+        </loadout>
+        <loadout id="r"> <!-- Kill Reward -->
+            <item  material="golden apple"/>
+            <item amount="2" material="arrow"/>
+        </loadout>
+    </loadouts>
+    <kills>
+        <rewards>
+            <reward loadout="r"/>
+        </rewards>
+    </kills>
+    <zones>
+        <zones>
+            <zone modify="never" region="everywhere"/>
+        </zones>
+    </zones>
+    <objectives>
+        <last-team-standing team="blue"/>
+        <last-team-standing team="lime"/>
+    </objectives>
+    <elimination lives="1"/>
+    <results>
+        <win scenario="objectives">
+            <check>
+                <time>10m</time>
+            </check>
+        </win>
+    </results>
+    <items>
+        <remove-drops>
+            <any>
+                <material>golden apple</material>
+                <material>leather helmet</material>
+                <material>chainmail chestplate</material>
+                <material>leather leggings</material>
+                <material>leather boots</material>
+                <material>bread</material>
+                <material>arrow</material>
+            </any>
+        </remove-drops>
+
+        <repair-tools>
+            <any>
+                <material>wood sword</material>
+                <material>bow</material>
+            </any>
+        </repair-tools>
+    </items>
+</map
