@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map name="Pasterine" version="1.0.0">
+<map name="Rocky Pastures" version="1.0.0">
     <include src="defaults.xml"/>
     <authors>
         <author uuid="99b8a2a4-cb22-4ba1-a683-7cd90a02aac5"/> <!-- Junr -->
