@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map name="Nautica" version="1.0.0">
+    <include src="defaults.xml"/>
+    <authors>
+        <author uuid="0e561165-60bf-49e6-aa38-3db002ad7d08"/> <!-- AbusiveUser -->
+        <author uuid="45417b55-5117-42d0-9dd6-672227c040a2"/> <!-- PepsiMax -->
+        <author uuid="e4b99cb2-9d7a-49a5-9743-f5b107d21053"/> <!-- TheAAG -->
+    </authors>
+    <teams>
+        <team id="cyan" color="cyan" min="2" max="15">{colors.cyan}</team>
+        <team id="lime" color="yellow" min="2" max="15">{colors.lime}</team>
+    </teams>
+    <spawns>
+        <spawn> <!-- Obs -->
+            <regions>
+                <point yaw="-90">-991.5, 48, -1101.5</point>
+            </regions>
+        </spawn>
+        <spawn team="lime" loadout="kit"> <!-- Lime -->
+            <regions>
+                <point yaw="-180">-939.5, 13, -1051.5</point>
+            </regions>
+        </spawn>
+        <spawn team="cyan" loadout="kit"> <!-- Cyan -->
+            <regions>
+                <point yaw="0">-939.5, 13, -1151.5</point>
+            </regions>
+        </spawn>
+    </spawns>
+    <loadouts>
+        <loadout id="kit">
+            <helmet team-color="true" material="leather helmet"/>
+            <chestplate material="iron chestplate"/>
+            <leggings material="chainmail leggings"/>
+            <boots team-color="true" material="leather boots">
+                <enchantment level="100">protection fall</enchantment>
+            </boots>
+            <item slot="0" material="iron sword">
+                <enchantment level="127">damage all</enchantment>
+            </item>
+            <item slot="1" material="bow"/>
+                <enchantment level="127">arrow damage</enchantment>
+            </item>
+            <item slot="8" material="bread" amount="12"/>
+            <item slot="28" material="arrow" amount="1"/>
+        </loadout>
+        <loadout id="r"> <!-- Kill Reward -->
+            <item  material="golden apple"/>
+            <item amount="1" material="arrow"/>
+        </loadout>
+    </loadouts>
+    <kills>
+        <rewards>
+            <reward loadout="r"/>
+        </rewards>
+    </kills>
+    <objectives>
+        <last-team-standing team="blue"/>
+        <last-team-standing team="lime"/>
+    </objectives>
+    <elimination lives="2"/>
+    <results>
+        <win scenario="objectives">
+            <check>
+                <time>10m</time>
+            </check>
+        </win>
+    </results>
+    <items>
+        <remove-drops>
+            <any>
+                <material>golden apple</material>
+                <material>leather helmet</material>
+                <material>iron chestplate</material>
+                <material>chainmail leggings</material>
+                <material>leather boots</material>
+                <material>bread</material>
+                <material>arrow</material>
+            </any>
+        </remove-drops>
+
+        <repair-tools>
+            <any>
+                <material>iron sword</material>
+                <material>bow</material>
+            </any>
+        </repair-tools>
+    </items>
+    <locales>
+        <locale lang="en">
+            <error>
+                <build>Nope :p</build>
+            </error>
+        </locale>
+    </locales>
+    <zones>
+        <zones>
+            <zone modify="never" region="everywhere"/>
+                <build-message>{error.build}</build-message>
+        </zones>
+        <!-- Cyan Left -->
+        <zone modify="never">
+            <region>
+                <cylinder base="-927.5, 10, -1121.5" radius="2" height="4"/>
+            </region>
+            <portal>
+                <destination>
+                    <point>-927.5, 20, -1113.5</point>
+                </destination>
+            </portal>
+        </zone>
+        <!-- Cyan Right -->
+        <zone modify="never">
+            <region>
+                <cylinder base="-951.5, 10, -1121.5" radius="2" height="4"/>
+            </region>
+            <portal>
+                <destination>
+                    <point>-951.5, 20, -1113.5</point>
+                </destination>
+            </portal>
+        </zone>
+        <!-- Lime Left -->
+        <zone modify="never">
+            <region>
+                <cylinder base="-951.5, 10, -1081.5" radius="2" height="4"/>
+            </region>
+            <portal>
+                <destination>
+                    <point>-951.5, 20, -1089.5</point>
+                </destination>
+            </portal>
+        </zone>
+        <!-- Lime Right -->
+        <zone modify="never">
+            <region>
+                <cylinder base="-927.5, 10, -1081.5" radius="2" height="4"/>
+            </region>
+            <portal>
+                <destination>
+                    <point>-927.5, 20, -1089.5</point>
+                </destination>
+            </portal>
+        </zone>
+    </zones>
+</map>
