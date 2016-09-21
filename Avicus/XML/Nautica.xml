@@ -45,7 +45,6 @@
             <item slot="28" material="arrow" amount="1"/>
         </loadout>
         <loadout id="r"> <!-- Kill Reward -->
-            <item  material="golden apple"/>
             <item amount="1" material="arrow"/>
         </loadout>
     </loadouts>
