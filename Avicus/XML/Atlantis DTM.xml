@@ -103,7 +103,6 @@
                 <material>planks</material>
             </any>
         </remove-drops>
- 
         <repair-tools>
             <any>
                 <material>stone sword</material>
