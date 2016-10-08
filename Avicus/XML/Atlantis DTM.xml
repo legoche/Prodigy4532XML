@@ -5,8 +5,8 @@
         <author uuid="50a34639-abb3-4cf1-b182-204756c49f49" /> <!-- Sam -->
     </authors>
     <teams>
-        <team id="green" color="green" min="2" max="8" max-overfill="10">{colors.green}</team>
-        <team id="blue" color="blue" min="2" max="8" max-overfill="10">{colors.blue}</team>
+        <team id="green" color="green" min="2" max="10" max-overfill="12">Watermen</team>
+        <team id="blue" color="blue" min="2" max="10" max-overfill="12"Sharks</team>
     </teams>
     <spawns>
         <spawn>
