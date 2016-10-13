@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<map name="Zombieland" version="1.0.0"> <!-- XML by Prodigy4532/Proddyy_-->
+	<include src="defaults.xml"/>
+	<authors>
+        <author uuid="3c77ca58-7a22-4d2f-b038-0eaaad8ed105" /> <!-- Phil -->
+    </authors>
+    <teams>
+        <team id="green" color="green" min="5" max="20" max-overfill="22">{colors.green}</team>
+        <team id="blue" color="blue" min="5" max="20" max-overfill="22">{colors.blue}</team>
+    </teams>
+    <spawns>
+        <spawn>
+            <regions>
+                <point yaw="-90">-47.5,104,-60.5</point>
+            </regions>
+        </spawn>
+        <spawn team="green" loadout="default">
+            <regions>
+                <point yaw="180">
+                	<cuboid min="13, 93, -120" max="15, 93, -122"/>
+                </point>
+            </regions>
+        </spawn>
+        <spawn team="blue" loadout="default">
+            <regions>
+                <point yaw="0">
+                	<cuboid min="-8, 93, -1" max="-10, 93, 1"/>
+                </point>
+            </regions>
+        </spawn>
+    </spawns>
+    <objectives>
+        <monuments materials="obsidian">
+            <monuments owner="green">
+                <monument name="The Lab">
+                    <region>
+                        <block>-9, 104, -147</block> 
+                    </region>
+                </monument>
+                <monument name="gas-Station">
+                    <region>
+                        <block>12, 98, -98</block>
+                    </region>
+                </monument>
+            </monuments>
+            <monuments owner="blue">
+                <monument name="The Lab">
+                    <region>
+                        <block>13, 104, 25</block>
+                    </region>
+                </monument>
+                <monument name="gas-Station">
+                    <region>
+                        <block>-8, 98, -24</block>
+                    </region>
+                </monument>
+            </monuments>
+        </monuments>
+    </objectives>
+    <zones>
+    	<zone modify="never">
+            <region>
+                <invert>
+                	<cuboid min="-31, 1, -151" max="36, 256, 30"/>
+                </invert>
+            </region>
+            <message>{errors.outside-map}</message>
+        </zone>
+        <zone modify="never"> <!-- Blue -->
+        	<enter>
+                <team>blue</team>
+            </enter>
+            <region>
+                <cuboid min="-4, 1, -7" max="5, 256, 5"/>
+            </region>
+        </zone>
+        <zone modify="never"> <!-- Green -->
+        	<enter>
+                <team>green</team>
+            </enter>
+            <region>
+                <cuboid min="5, 1, -116" max="-4, 256, -128"/>
+            </region>
+        </zone>
+    </zones>
+    <loadouts>
+        <loadout id="default">
+            <item slot="0" material="stone sword"/>
+            <item slot="1" material="bow">
+            	<enchantment level="1">arrow infinite</enchantment>
+            </item>
+            <item slot="2" material="diamond pickaxe">
+            	<enchantment level="1">dig speed</enchantment>
+            </item>
+            <item slot="3" material="golden apple" amount="2"/>
+            <item slot="4" material="cooked fish" amount="32"/>
+            <item slot="5" material="prismarine" amount="64"/>
+            <item slot="6" material="log" amount="48"/>
+            <item slot="28" material="arrow" amount="1"/>
+            <chestplate team-color="true" material="leather chestplate"/>
+            <boots team-color="true" material="leather boots">
+        </loadout>
+    </loadouts>
+    <items>
+        <remove-drops>
+            <any>
+                <material>leather chestplate</material>
+                <material>leather boots</material>
+                <material>cooked fish</material>
+                <material>arrow</material>
+                <material>prismarine</material>
+                <material>log</material>
+                <material>planks</material>
+            </any>
+        </remove-drops>
+ 
+        <repair-tools>
+            <any>
+                <material>stone sword</material>
+                <material>bow</material>
+                <material>diamond pickaxe</material>
+            </any>
+        </repair-tools>
+    </items>
+</map>
